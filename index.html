@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Problema del caballo</title>
+    <link rel="shortcut icon" href="img/horseico.png" type="image/x-icon" />
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body>
+    <!--==================== HEADER ====================-->
+    <header>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Historia</a>
+        <a href="#explicacion">Explicacion</a>
+        <a href="#jugar">Jugar</a>
+      </nav>
+      <section id="inicio" class="textos-header">
+        <h1>Problema del Caballo</h1>
+        <h2>Explicado matematicamente</h2>
+      </section>
+      <div class="wave" style="height: 150px; overflow: hidden">
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style="height: 100%; width: 100%"
+        >
+          <path
+            d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+            style="stroke: none; fill: #fff"
+          ></path>
+        </svg>
+      </div>
+    </header>
+      <!--==================== MAIN ====================-->
+      <main>
+      <!--==================== HISTORIA ====================-->
+      <section id="historia" class="contenedor historia">
+        <h2 class="titulo">Pequeña Historia del Problema</h2>
+        <h3 class="intro">El "recorrido del caballo" es un problema clásico de la teoría de grafos, que se planteó por primera vez hace más de 1.000 años y sobre el que reflexionaron matemáticos legendarios como Leonhard Euler antes de ser resuelto finalmente en 1823.<br><br> Utilizaremos el problema del recorrido del caballo para ilustrar un segundo algoritmo de grafos común llamado búsqueda de profundidad. El problema del recorrido del caballo se juega en un tablero de ajedrez con una sola pieza, el caballo. El objetivo del rompecabezas es encontrar una secuencia de movimientos que permita al caballo visitar cada casilla del tablero una vez, así:</h3>
+        <div class="contenedor-historia">
+          <img src="img/ilustracion2.gif" alt="Un posible recorrido del Caballo" class="imagen-historia" loading="lazy" />
+          <div class="contenido-textos">
+            <h3><span>1</span>Aparicion del problema</h3>
+            <p>
+              Los primeros estudios del problema del caballo se encuentran en un
+              manuscrito del siglo IX, que recoge soluciones de dos grandes
+              ajedrecistas árabes. Hacia mediados del siglo XVIII entre los
+              círculos matemáticos europeos, este enigma tuvo un gran auge,
+              principalmente por el enorme número de soluciones posibles.
+            </p>
+            <h3><span>2</span>El gran aporte de Euler</h3>
+            <p>
+              El trabajo más importante en relación a este problema, se atribuye
+              al genial Leonhard Euler, que destacó por sus ingeniosas y
+              fantásticas soluciones. Una de las soluciones que dio este genio
+              matemático asombró por su belleza. <br><br>Euler construyó un cuadrado
+              mágico donde las filas y las columnas sumaban 260. El caballo se
+              desplaza desde la casilla 1 hasta la 64 en orden numérico. Puedes
+              comprobarlo en la siguiente imagen. Si ya de por sí, el desarrollo
+              de la marcha del caballo por todo el tablero es muy difícil de
+              conseguir, añádele además conseguir un cuadrado mágico.
+              Impresionante!
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--==================== EXPLICACION ====================-->
+      <section id="explicacion" class="explicacion">
+        <div class="contenedor">
+          <h2 class="titulo">Video Explicativo</h2>
+          <div class="video-contenedor">
+          <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/xub1KmUgrdk" enablejsapi=1&color=white frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </section>
+      <!--==================== SOLUCION ====================-->
+      <section class="solucion contenedor">
+        <h2 class="titulo">Cómo resolver el problema del caballo</h2>
+          <h3 class="intro">
+            En Resumidas cuentas, el problema consiste en recorrer las 64 casillas del tablero con un caballo, en 64 movimientos y sin pasar dos veces por la misma casilla
+            <br><br>
+            - Empezar y terminar en la misma casilla (circuito cerrado). Más complicado.<br>
+            - Empezar en una casilla y terminar en otra (circuito abierto). Más “sencillo”<br><br>
+            Encontrar una solución simplemente moviendo el caballo "a través de prueba y error" es imposible. Son pocos los que han ideado un método que facilite el proceso.
+            Siempre ayuda dividir un problema en pequeños pedazos. Una buena estrategia inicial sería dividir el tablero en pequeñas porciones. Debes tener claro qué rutas son posibles y vincularlas hasta completar el tablero.
+          </h3>
+        <img src="img/cuadros-magicos.svg" alt="problema del caballo de ajedrez algoritmo" loading="lazy">
+          <h3 class="intro">
+            <br><br>
+            Aunque Euler propuso principalmente caminos cerrados, que son más elegantes y además permiten resolver el problema desde cualquier cuadro inicial, ha proporcionado algunas pautas para resolver este problema en general con el fin de obtener el cuadrado mágico.
+            <br><br>
+            Con este desconcertante problema, Euler “dividió” el tablero en cuatro partes, en cuadrados de 16 celdas (4 × 4) y pudo resolver el problema con su búsqueda de patrones, simetría y su enorme genio.<br><br>
+            Aplicando matematicas discretas, resolveremos el problema utilizando dos pasos principales:<br>1. Representar los movimientos legales de un caballo en un tablero de ajedrez como un grafo.<br>2. Utilizar un algoritmo de grafos para encontrar un camino en el que cada vértice del grafo sea visitado exactamente una vez.            
+          </h3>
+        <div class="cards">
+          <div id="jugar" class="card">
+            <a href="https://mindbluff.com/askchess.htm"><svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" style="fill:rgba(249, 249, 249, 1);transform:-ms-filter"><path fill="none" d="M19.98,8.72C19.877,7.225,18.567,6,17,6H7C5.383,6,4.069,7.26,4.009,8.867C4.007,8.92,4.001,8.972,3.991,9.022 L4,16.5c0,0.397,0.159,0.784,0.437,1.062C4.716,17.841,5.103,18,5.5,18c0.5,0,1.038-0.638,1.661-1.377 c0.336-0.397,0.717-0.849,1.149-1.261c0.577-0.55,1.821-1.099,2.459-1.249C11.187,14.015,11.72,14,12,14s0.813,0.015,1.229,0.112 c0.64,0.151,1.884,0.7,2.461,1.249c0.433,0.413,0.813,0.864,1.149,1.262C17.462,17.362,18,18,18.5,18 c0.397,0,0.784-0.159,1.062-0.437C19.841,17.284,20,16.897,20,16.5V9c-0.013-0.063-0.01-0.096-0.01-0.16 C19.985,8.84,19.98,8.779,19.98,8.72z M8,12c-1.105,0-2-0.895-2-2s0.895-2,2-2s2,0.895,2,2S9.105,12,8,12z M16,7 c0.553,0,1,0.447,1,1s-0.447,1-1,1s-1-0.447-1-1S15.447,7,16,7z M14,11c-0.553,0-1-0.447-1-1s0.447-1,1-1s1,0.447,1,1 S14.553,11,14,11z M16,13c-0.553,0-1-0.447-1-1s0.447-1,1-1s1,0.447,1,1S16.553,13,16,13z M18,11c-0.553,0-1-0.447-1-1s0.447-1,1-1 s1,0.447,1,1S18.553,11,18,11z"></path><path d="M21.979,8.652C21.802,6.044,19.615,4,17,4H7C4.321,4,2.142,6.076,2.013,8.737C2.003,8.816,2,8.898,2,8.99v7.51 c0,0.925,0.373,1.828,1.022,2.476C3.672,19.627,4.575,20,5.5,20c1.429,0,2.324-1.061,3.189-2.087c0.318-0.377,0.646-0.767,1-1.103 c0.237-0.226,1.102-0.647,1.539-0.751c0.252-0.059,1.293-0.058,1.541-0.001c0.439,0.104,1.304,0.526,1.541,0.751 c0.354,0.337,0.682,0.727,1,1.104C16.176,18.939,17.071,20,18.5,20c0.925,0,1.828-0.373,2.476-1.022 C21.627,18.328,22,17.425,22,16.5V9c0-0.095-0.004-0.18-0.014-0.26C21.984,8.712,21.981,8.683,21.979,8.652z M20,16.5 c0,0.397-0.159,0.784-0.438,1.063C19.284,17.841,18.897,18,18.5,18c-0.5,0-1.038-0.638-1.661-1.377 c-0.336-0.397-0.717-0.849-1.149-1.262c-0.577-0.549-1.821-1.098-2.461-1.249C12.813,14.015,12.28,14,12,14 s-0.813,0.015-1.23,0.113c-0.638,0.15-1.882,0.699-2.459,1.249c-0.433,0.412-0.813,0.863-1.149,1.261C6.538,17.362,6,18,5.5,18 c-0.397,0-0.784-0.159-1.063-0.438C4.159,17.284,4,16.897,4,16.5L3.991,9.022c0.01-0.051,0.016-0.103,0.018-0.155 C4.069,7.26,5.383,6,7,6h10c1.567,0,2.877,1.225,2.98,2.72c0,0.06,0.005,0.12,0.01,0.12c0,0.064-0.003,0.097,0.01,0.16V16.5z"></path><circle cx="16" cy="12" r="1"></circle><circle cx="18" cy="10" r="1"></circle><circle cx="16" cy="8" r="1"></circle><circle cx="14" cy="10" r="1"></circle><circle cx="8" cy="10" r="2"></circle></svg></a>        
+            <div class="contenido-texto-card">
+              <h4>Juega</h4>
+              <p>
+                Pon a prueba tus capacidades e intenta resolver el problema!
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="https://surban0.github.io/ProblemaDelCaballo/"><svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" style="fill:rgba(255, 255, 255, 1);transform:-ms-filter"><path d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8s3.589-8,8-8 s8,3.589,8,8S16.411,20,12,20z"></path><path d="M9 17L17 12 9 7z"></path></svg></a>
+            <div class="contenido-texto-card">
+              <h4>Mira el recorrido</h4>
+              <p>
+                Mira las posibles recorridos que puede dar el caballo modificando algunos parametros!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--==================== SOLUCION ====================-->
+      <section class="conclusion">
+        <div class="contenedor">
+          <h2 class="titulo">¿Cuantas soluciones hay?</h2>
+          <h3 class="intro">Se han encontrado muchas soluciones para este problema y de hecho no se sabe con seguridad de cuántas maneras diferentes es posible solucionarlo.<br><br>
+           Pero gracias a la ayuda de los ordenadores, en 1995 Löbbing y Wegener pusieron a trabajar a 20 ordenadores para calcular posibles variantes para el paseo del caballo sin repetir ninguna casilla y llegaron a la conclusion que el problema del caballo puede tener más de 33 billones de soluciones</h3>
+          <figure>
+            <img src="img/movimientos-legales.png" alt="grafo de los moviemientos legales del caballo" loading="lazy">
+            <figcaption>Todos los movimientos legales de un caballo en un tablero de 8x8</figcaption>
+          </figure>
+          <h3 class="intro">Una de estas secuencias se llama "Camino del caballo". Se sabe que el límite superior del número de giros legales posibles para un tablero de ajedrez de ocho por ocho es de 1,305 X 10<sup>35</sup> veces.<br><br>
+          Para terminar,quisieramos decir que es posible que sea una pérdida de tiempo dedicarse a resolver este tipo de problemas intrascendentes. Pero problemas como estos son un claro ejemplo de optimización en todo tipo de transportes actuales y en las técnicas utilizadas para su resolución son muy importantes los algoritmos más eficientes y precisos, como los que se pueden aplicar al resolver el dichoso problema del salto del caballo. Incluso, a nivel didáctico, estos problemas son muy apropiados para ilustrar la teoría de grafos, especialidad matemática de gran alcance.</h3>
+        </div>
+      </section>
+    </main>
+    <!--==================== FOOTER ====================-->
+    <footer>
+      <h2 class="titulo-final">&copy; SHS</h2>
+    </footer>
+  </body>
+</html>
