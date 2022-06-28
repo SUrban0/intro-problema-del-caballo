@@ -1,0 +1,205 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+html {
+  height: 100%;
+  background: #fafafa;
+}
+
+body {
+  color: #555;
+}
+
+img {
+  max-width: 220px;
+  max-height: 220px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+h1 {
+  color: #fff;
+  font-size: 25px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#start-screen {
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+#result-screen {
+  display: none;
+  text-align: center;
+}
+
+#start-screen,
+#result-details {
+  max-width: 500px;
+  margin: 20px auto 0 auto;
+}
+
+.title-container {
+  padding: 15px 0px;
+  text-align: center;
+  width: 100%;
+  background-color: #1f1f6b;
+  margin-bottom: 40px;
+}
+
+#board {
+  margin: 50px auto;
+  white-space: nowrap;
+}
+
+.cell {
+  border: 1px solid #666;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.active-knight-cell {
+  color: #333;
+  font-size: 30px;
+  background-color: #5eb95e;
+  font-size: 16px;
+  background-image: url(https://raw.githubusercontent.com/SUrban0/ProblemaDelCaballo/main/img/caballo.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 30px;
+}
+
+.used-cell {
+  color: #fff;
+  background-color: #888;
+}
+
+.index-cell-row {
+  text-align: right;
+  border-color: white;
+}
+
+.index-cell-row .number {
+  margin-right: 10px;
+}
+
+.index-cell-col {
+  text-align: center;
+  border-color: white;
+}
+
+.index-cell-col-empty {
+  border-color: white;
+}
+
+.form-item {
+  padding: 6px 0;
+}
+
+.form-item label {
+  font-weight: bold;
+}
+
+input[type=number] {
+  width: 50px;
+  padding: 2px;
+  border: none;
+  font-size: 15px;
+}
+
+select {
+  padding: 2px;
+  border: none;
+  font-size: 15px;
+  background: white;
+}
+
+button {
+  background-color: #1f1f6b;
+  color: #fff;
+  padding: 10px 15px;
+  border: 1px solid #333;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+#solve-button {
+  margin-top: 10px;
+}
+
+#info {
+  color: rgb(16, 16, 150);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#error {
+  color: rgb(175, 29, 29);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.profile-link-container {
+  margin: 50px 0 20px 0;
+  justify-content: center;
+  display: flex;
+  line-height: 60px;
+}
+
+.profile-link {
+  text-decoration: none;
+  padding-left: 55px;
+  background: url(https://pattern.uao.edu.co/images/logo-uao-virtual-vertical.svg) 0 center no-repeat;
+  font-size: 14px;
+  height: 60px;
+  background-size: 50px 50px;
+  color: #1f1f6b;
+}
+
+.profile-link:hover .heart {
+  color: #c44736;
+}
+
+.profile-link:hover .underline {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.underline {
+  display: block;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 2px;
+  bottom: 30%;
+  right: 0;
+  background-color: #1f1f6b;
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  transition: all 0.25s ease-in-out 0s;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+}
